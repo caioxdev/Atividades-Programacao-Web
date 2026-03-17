@@ -8,7 +8,8 @@ const input = document.getElementById("input");
 const button = document.getElementById("button");
 const paragrafo = document.getElementById("paragrafo");
 
-const numeroSorteado = Math.floor(Math.random() * (20 - 1 + 1) + 1);
+//                                Math.random() * (max - min + 1) + min
+const numeroSorteado = Math.floor(Math.random() * (20 - 1 + 1)) + 1;
 
 let numeroTentativas = 0;
 
