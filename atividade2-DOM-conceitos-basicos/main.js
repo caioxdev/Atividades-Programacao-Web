@@ -27,13 +27,15 @@ botao2.addEventListener("click", () => {
 // Vai contar os caracteres
 const input1 = document.getElementById("texto-dinamico");
 const textoCaracteres = document.getElementById("texto-caracteres");
-const lista = document.getElementById("lista");
-const ul = document.createElement("ul");
 
-lista.appendChild(ul);
-ul.style.listStyle = 'none';
-ul.style.padding = '0';
-ul.style.textAlign = 'left';
+const lista = document.getElementById("lista");
+const listaOrdenada = document.createElement("ul");
+
+lista.appendChild(listaOrdenada);
+
+listaOrdenada.style.listStyle = 'none';
+listaOrdenada.style.padding = '0';
+listaOrdenada.style.textAlign = 'left';
 
 const contarCaractere = () => {
   let numCaracteres = input1.value.replace(/\s/g, "");
@@ -46,7 +48,7 @@ const adicionarTexto = () => {
   const item = document.createElement("li");
 
   item.textContent = valorInput;
-  ul.appendChild(item);
+  listaOrdenada.appendChild(item);
 
   input1.value = "";
   textoCaracteres.innerHTML = "";
@@ -56,3 +58,78 @@ input1.addEventListener("input", contarCaractere);
 input1.addEventListener("keydown", (e) => {
   e.key === "Enter" ? adicionarTexto() : null;
 });
+
+// 3 - Escolher tipo de lista
+const escolherLista = document.getElementById("escolher-lista"); // select
+const mostrarLista = document.getElementById("mostrarLista"); // div
+const btnAdicionarLista = document.getElementById("btn-add-lista");
+
+const itens = ["item1", "item2", "item3"];
+
+const ol = document.createElement("ol");
+const ul = document.createElement("ul");
+
+lista.appendChild(ul);
+
+const mostrarTipoQualListaSelecionada = () => {
+  switch (escolherLista.value) {
+    case "ol":
+      for (let i = 0; i < itens.length; i++) {
+        const li = document.createElement("li");
+
+        li.textContent = itens[i];
+        ol.appendChild(li);
+      }
+      mostrarLista.appendChild(ol);
+      break;
+    case "ul":
+      for (let i = 0; i < itens.length; i++) {
+        const li = document.createElement("li");
+
+        li.textContent = itens[i];
+        ul.appendChild(li);
+      }
+      mostrarLista.appendChild(ul);
+      break;
+    default:
+      break;
+  }
+}
+btnAdicionarLista.addEventListener("click", mostrarTipoQualListaSelecionada);
+
+// Resetar tudo
+const btnResetar = document.getElementById("btn-resetar");
+
+// 1 - limpar o resultado do incrementar e decrementar
+const resetarIncrementarDecrementar = () => {
+  resultado.innerHTML = "";
+}
+
+// 2 - limpar o input, contador e lista adicionada
+const resetarInputContadorItens = () => {
+  // limpar input
+  input1.value = "";
+
+  // limpar contador
+  textoCaracteres.innerHTML = "";
+
+  // limpar lista
+  lista.textContent = "";
+}
+
+// 3 - limpar a escolha do selected e a lista que foi escolhida
+const resetarSelectedLista = () => {
+  // limpar a escolha do selected
+  escolherLista.selectedIndex = 0;
+
+  // limpar a lista que foi escolhida
+  mostrarLista.innerHTML = "";
+
+}
+const resetarTudo = () => {
+  resetarIncrementarDecrementar();
+  resetarInputContadorItens();
+  resetarSelectedLista();
+}
+
+btnResetar.addEventListener("click", resetarTudo);

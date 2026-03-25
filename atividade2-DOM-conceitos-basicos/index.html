@@ -1,21 +1,33 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-br">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-</head>
-<body>
-  <!-- 1 - Contador de Click -->
-  <button id="incrementar">Incrementar</button>
-  <button id="decrementar">decrementar</button>
-  <p id="result"></p>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- 1 - Contador de Click -->
+    <button id="incrementar">Incrementar</button>
+    <button id="decrementar">decrementar</button>
+    <p id="result"></p>
 
-  <!-- 2 - Contar caractere e adicionar -->
-  <input type="text" id="texto-dinamico" placeholder="Digite algo...">
-  <p><span id="texto-caracteres"></span> caracteres</p>
-  <div id="lista"></div>
+    <!-- 2 - Contar caractere e adicionar -->
+    <input type="text" id="texto-dinamico" placeholder="Digite algo..." />
+    <p><span id="texto-caracteres"></span> caracteres</p>
+    <div id="lista"></div>
 
-  <script src="main.js"></script>
-</body>
+    <!-- 3 - Escolher tipo de lista -->
+    <label for="escolher-lista">Escolha o tipo de lista:</label>
+    <select name="escolher-lista" id="escolher-lista">
+      <option value="" disabled selected hidden>Selecione uma lista</option>
+      <option value="ol">Lista Ordenada</option>
+      <option value="ul">Lista não Ordenada</option>
+    </select>
+    <button id="btn-add-lista">Adicionar lista</button>
+    <div id="mostrarLista"></div>
+
+    <!-- Resetar tudo -->
+    <button id="btn-resetar">Resetar tudo</button>
+    <script src="main.js"></script>
+  </body>
 </html>
