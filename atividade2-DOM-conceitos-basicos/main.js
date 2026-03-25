@@ -23,17 +23,36 @@ botao2.addEventListener("click", () => {
 });
 
 // 2 - Adicionar texto dinâmico
+
+// Vai contar os caracteres
 const input1 = document.getElementById("texto-dinamico");
 const textoCaracteres = document.getElementById("texto-caracteres");
+const lista = document.getElementById("lista");
+const ul = document.createElement("ul");
 
-const adicionarTexto = () => {
+lista.appendChild(ul);
+ul.style.listStyle = 'none';
+ul.style.padding = '0';
+ul.style.textAlign = 'left';
+
+const contarCaractere = () => {
   let numCaracteres = input1.value.replace(/\s/g, "");
   textoCaracteres.innerHTML = numCaracteres.length;
 }
 
+// Vai adicionar um item em ul quando apertar Enter
+const adicionarTexto = () => {
+  let valorInput = input1.value;
+  const item = document.createElement("li");
+
+  item.textContent = valorInput;
+  ul.appendChild(item);
+
+  input1.value = "";
+  textoCaracteres.innerHTML = "";
+}
+
+input1.addEventListener("input", contarCaractere);
 input1.addEventListener("keydown", (e) => {
-  if (e.key == "Enter") {
-    e.preventDefault();
-    adicionarTexto();
-  }
+  e.key === "Enter" ? adicionarTexto() : null;
 });
