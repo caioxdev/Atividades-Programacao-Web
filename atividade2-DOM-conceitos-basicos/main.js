@@ -55,9 +55,7 @@ const adicionarTexto = () => {
 }
 
 input1.addEventListener("input", contarCaractere);
-input1.addEventListener("keydown", (e) => {
-  e.key === "Enter" ? adicionarTexto() : null;
-});
+input1.addEventListener("keydown", (e) => { (e.key === "Enter") ? adicionarTexto() : null });
 
 // 3 - Escolher tipo de lista
 const escolherLista = document.getElementById("escolher-lista"); // select
