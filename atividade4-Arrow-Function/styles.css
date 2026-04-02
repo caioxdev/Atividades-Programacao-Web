@@ -1,0 +1,140 @@
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap");
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "IBM Plex Mono";
+  font-style: normal;
+  background:
+    linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url(./img/posto-gasolina.jpg) center center / cover no-repeat;
+  overflow: hidden;
+}
+
+.app-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  max-width: 100%;
+  padding: 1rem 2rem 3rem 2rem;
+  background-color: #fff;
+  border-radius: 10px;
+
+  h1 {
+    margin-bottom: 10px;
+    font-size: 2rem;
+    font-weight: 700;
+    background: linear-gradient(
+      94.23deg,
+      #008542 12.41%,
+      #ffd100 52.55%,
+      #ffd100 89.95%
+    );
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .inputs {
+    display: flex;
+    text-align: left;
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  #tabela-precos {
+    max-width: 100%;
+    background-color: #dcdcdc;
+    padding: 0.625rem;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    text-align: left;
+    box-shadow:
+      -7px 0 0 0 #f2f289,
+      7px 0 0 0 #8ff27f;
+
+    p {
+      font-size: 0.875rem;
+      font-weight: 700;
+      margin-bottom: 5px;
+    }
+
+    p::after {
+      content: "";
+      display: block;
+      width: 100%;
+      height: 2px;
+      background-color: red;
+      margin-top: 5px;
+      background: linear-gradient(
+        94.23deg,
+        #008542 12.41%,
+        #ffd100 52.55%,
+        #ffffff 89.95%
+      );
+      -webkit-text-fill-color: transparent;
+    }
+
+    ul {
+      list-style: none;
+      font-size: 0.75rem;
+      font-weight: 600;
+    }
+  }
+
+  #resultado {
+    text-align: left;
+
+    h2 {
+      margin-top: 10px;
+    }
+  }
+}
+
+.wave-bg {
+  position: fixed;
+  bottom: 0;
+  left: -50%;
+  width: 200%;
+  height: 180px;
+  background: linear-gradient(90deg, #008542, #ffd100, #ffffff);
+  border-radius: 50% 50% 0 0 / 100% 100% 0 0;
+  opacity: 0.55;
+  z-index: -1;
+  animation: wave-motion 15s infinite linear alternate;
+}
+.wave-bg2 {
+  animation-duration: 20s;
+  opacity: 0.4;
+  height: 145px;
+  background: linear-gradient(90deg, #ffffff, #ffd100, #008542);
+  transform: translate3d(0, 20px, 0);
+}
+.wave-bg3 {
+  animation-duration: 10s;
+  opacity: 0.2;
+  height: 100px;
+  background: linear-gradient(90deg, #ffd100, #008542, #ffffff);
+  transform: translate3d(0, -10px, 0);
+}
+
+@keyframes wave-motion {
+  0% {
+    transform: translate3d(-25%, 0, 0);
+  }
+  100% {
+    transform: translate3d(25%, -20px, 0);
+  }
+}
