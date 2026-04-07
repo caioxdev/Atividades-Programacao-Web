@@ -17,6 +17,6 @@ frutas.splice(3, 0, "Limão");
 console.log(frutas);
 
 // remoção em um posição específica
-//índice/posição, quantidadeRemover
+// índice/posição, quantidadeRemover
 frutas.splice(0, 1); // eliminar o primeiro item
 console.log(frutas);

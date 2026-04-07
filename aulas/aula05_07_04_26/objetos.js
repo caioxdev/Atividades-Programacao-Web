@@ -32,7 +32,6 @@ const p2 = new Pessoa("Maria", 34);
 console.log(p1);
 console.log(p2);
 
-// USANDO CLASSES (CLASS)
 // colocar em uma classe
 class Animal {
   constructor(tipo, nome) {
